@@ -1,0 +1,16 @@
+---
+
+- hosts: webserver
+  become: true
+  tasks:
+  - name: install apache
+    apt: name=apache2 state=present
+
+
+  - name: start apache service
+    service: name=apache2 state=started enabled=yes
+
+  - name: write your name
+    shell: echo Anshu Singh rathore >  /var/www/html?index.html
+
+    

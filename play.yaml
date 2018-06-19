@@ -1,0 +1,10 @@
+---
+
+- hosts: webserver
+  become: true
+  tasks:
+  - name: first task
+    ping:
+
+  - name: create user
+    user: name=playuser uid=6000
